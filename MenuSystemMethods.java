@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MenuSystemLoop {
+public class MenuSystemMethods {
 
     public static void main(String[] args) {
 
@@ -65,20 +65,19 @@ public class MenuSystemLoop {
         switch (usersOption) {
 
             case 1:
-                System.out.println("Your full name is " + " " + inputFirstName + " " + inputSecondName);
+                method1(inputFirstName, inputSecondName);
                 break;
 
             case 2:
-                System.out.println("You work at " + inputPlaceOfWork);
+                method2(inputPlaceOfWork);                
                 break;
 
             case 3:
-                System.out.println("Most people work for 35 years, you may have " + (35 - inputLengthOfService)
-                        + " years of work left.");
+                method3(inputLengthOfService);
                 break;
 
             case 4:
-                System.out.println("Keep on going " + inputFirstName + " you've got this!");
+                method4(inputFirstName);
                 break;  
 
         }
@@ -105,7 +104,45 @@ public class MenuSystemLoop {
         }
 
         keyScanner.close();
-    }   
+    }
+    
+        // Method for Option 1: Display full name
+        private static void method1(String firstName, String secondName) {
+
+            System.out.println("Your full name is " + firstName + " " + secondName);
+
+        }
+    
+        // Method for Option 2: Display place of work
+        private static void method2(String placeOfWork) {
+
+            System.out.println("You work at " + placeOfWork);
+
+        }
+    
+        // Method for Option 3: Calculate years left until retirement
+        private static void method3(int lengthOfService) {
+
+            int yearsLeft = 35 - lengthOfService;
+            if (yearsLeft > 0) {
+
+                System.out.println("You may have " + yearsLeft + " years of work left until retirement.");
+
+            } else {
+
+                System.out.println("You are eligible for retirement!");
+
+            }
+
+        }
+    
+        // Method for Option 4: Provide personalized encouragement
+        private static void method4(String firstName) {
+
+            System.out.println("Keep on going " + firstName + ", you've got this!");
+
+        }
+
 }   
 
 
