@@ -79,32 +79,30 @@ public class PersonalisedDigitalArtefact {
                 case 4:
                     // genarate random number to tell one of the jokes in the method
                     Random randomValue = new Random();
-                    int jokeGeneratingNumber = randomValue.nextInt(4) + 1;// generate a random number between 1 - 4 to
-                                                                          // tell the the joke in the switch statement
-                                                                          // in the method.
+                    int jokeGeneratingNumber = randomValue.nextInt(4) + 1;// generate a random number between 1 - 4 to tell the the joke in the switch statement in the method.
                     tellUserAJoke(jokeGeneratingNumber);
                     break;
 
             }
 
-        }
+                // Does the user want to continue the application?
+                System.out.println("Do you want to continue?(yes/no)");
+                String usersContinueChoice = keyScanner.nextLine();
 
-        // Does the user want to continue the application?
-        System.out.println("Do you want to continue?(yes/no)");
-        String usersContinueChoice = keyScanner.nextLine();
+                // convert users choice to lower case for validation of choice.
+                usersContinueChoice = usersContinueChoice.toLowerCase();
 
-        // convert users choice to lower case for validation of choice.
-        usersContinueChoice = usersContinueChoice.toLowerCase();
+                // else if statement to continue the programme
+                if (usersContinueChoice.equals("no")) {
 
-        // else if statement to continue the programme
-        if (usersContinueChoice.equals("no")) {
+                    continueProgramme = false;
+                    System.out.println("The programme will now exit, Goodbye!");
 
-            continueProgramme = false;
-            System.out.println("The programme will now exit, Goodbye!");
+                } else if (!usersContinueChoice.equals("yes")) {
 
-        } else if (!usersContinueChoice.equals("yes")) {
+                    System.out.println("Invalid response, I assume you want to continue");
 
-            System.out.println("Invalid response, I assume you want to continue");
+                }
 
         }
 
@@ -155,11 +153,7 @@ public class PersonalisedDigitalArtefact {
             } else {
 
                 double percentageTestingFinished = ((double) testsCurrentlyComplete / totalOfTests) * 100;
-                String percentageTestsCompletedResult = String.format("%.2f", percentageTestingFinished);// format
-                                                                                                         // double to
-                                                                                                         // display only
-                                                                                                         // 2 decimal
-                                                                                                         // places.
+                String percentageTestsCompletedResult = String.format("%.2f", percentageTestingFinished);// format  double to display only 2 decimal places.
                 System.out.println("You have completed " + percentageTestsCompletedResult + " % of your testing on "
                         + testedProduct);
 
